@@ -80,7 +80,10 @@ Style/StringLiterals:
 Style/TrivialAccessors:
   ExactNameMatch: true
 
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: no_comma
+
+Style/TrailingCommaInArrayLiteral:
   EnforcedStyleForMultiline: no_comma
 
 Style/TrailingCommaInArguments:
