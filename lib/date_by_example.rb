@@ -1,4 +1,5 @@
 require "date"
+require "date_by_example/date"
 require "date_by_example/version"
 require "date_by_example/example_formatter"
 require "benchmark"
@@ -17,3 +18,6 @@ module DateByExample
     # GSUB version is 16.15 seconds
   end
 end
+
+
+
