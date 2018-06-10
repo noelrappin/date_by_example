@@ -20,7 +20,7 @@ RSpec.describe ExampleFormatter do
   describe "months" do
 
     specify { expect(format_string_for("01")).to eq("%m") }
-    specify { expect(format_string_for(" 1")).to eq("%_m") }
+    # ruby has "%_m" for space padding, but we're not doing that
     specify { expect(format_string_for("1")).to eq("%-m") }
     specify { expect(format_string_for("January")).to eq("%B") }
     specify { expect(format_string_for("JANUARY")).to eq("%^B") }
@@ -32,7 +32,7 @@ RSpec.describe ExampleFormatter do
   describe "day of month" do
 
     specify { expect(format_string_for("02")).to eq("%d") }
-    specify { expect(format_string_for(" 2")).to eq("%e") }
+    # ruby has "%e" for space padding, but we're not doing that
     specify { expect(format_string_for("2")).to eq("%-e") }
     specify { expect(format_string_for("002")).to eq("%j") }
     specify { expect(format_string_for("Monday")).to eq("%A") }
@@ -47,7 +47,7 @@ RSpec.describe ExampleFormatter do
     specify { expect(format_string_for("15")).to eq("%H") }
     # ruby has %k for blank padded 24 hour clock but I can't do that here
     specify { expect(format_string_for("03")).to eq("%I") }
-    specify { expect(format_string_for(" 3")).to eq("%l") }
+    # ruby has "%l" for space padding, but we're not doing that
     specify { expect(format_string_for("PM")).to eq("%P") }
     specify { expect(format_string_for("pm")).to eq("%m") }
   end
@@ -76,13 +76,14 @@ RSpec.describe ExampleFormatter do
   # %s -- seconds since the epoch
 
   describe "can do date formats" do
-    let(:date) { DateTime.new(2018, 6, 9, 13, 15) }
+    let(:date) { DateTime.new(2018, 6, 10, 13, 15) }
 
-    specify { expect(format_date(date, "Jan 2, 2006")).to eq("Jun 9, 2018") }
-    specify { expect(format_date(date, "01/02/06")).to eq("06/09/18") }
+    specify { expect(format_string_for("Jan 2, 2006")).to eq("%b %-e, %Y") }
+    specify { expect(format_date(date, "Jan 2, 2006")).to eq("Jun 10, 2018") }
+    specify { expect(format_date(date, "01/02/06")).to eq("06/10/18") }
     specify { expect(format_string_for("2 Jan 06 15:04")).to eq("%-e %b %y %H:%M") }
-    specify { expect(format_date(date, "2 Jan 06 15:04")).to eq("9 Jun 18 13:15") }
-    specify { expect(date.by_example("Jan 2, 2006")).to eq("Jun 9, 2018") }
+    specify { expect(format_date(date, "2 Jan 06 15:04")).to eq("10 Jun 18 13:15") }
+    specify { expect(date.by_example("Jan 2, 2006")).to eq("Jun 10, 2018") }
   end
 
 end
