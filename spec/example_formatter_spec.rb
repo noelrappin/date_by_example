@@ -77,6 +77,7 @@ RSpec.describe ExampleFormatter do
 
   describe "can do date formats" do
     let(:date) { DateTime.new(2018, 6, 9, 13, 15) }
+
     specify { expect(format_date(date, "Jan 2, 2006")).to eq("Jun 9, 2018") }
     specify { expect(format_date(date, "01/02/06")).to eq("06/09/18") }
     specify { expect(format_string_for("2 Jan 06 15:04")).to eq("%-e %b %y %H:%M") }

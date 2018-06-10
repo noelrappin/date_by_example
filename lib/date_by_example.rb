@@ -4,7 +4,6 @@ require "date_by_example/example_formatter"
 require "benchmark"
 
 module DateByExample
-
   def self.benchmark
     dt = DateTime.new(2018, 6, 9, 13, 15)
     Benchmark.bm do |x|
@@ -16,7 +15,5 @@ module DateByExample
     end
 
     # GSUB version is 16.15 seconds
-
   end
-
 end

@@ -21,6 +21,9 @@ Metrics/BlockLength:
 Metrics/ClassLength:
   Enabled: false
 
+Metrics/LineLength:
+  Enabled: false
+
 Metrics/MethodLength:
   Enabled: false
 
@@ -140,4 +143,7 @@ RSpec/NestedGroups:
   Enabled: false
 
 RSpec/DescribedClass:
+  Enabled: false
+
+Style/DateTime:
   Enabled: false
