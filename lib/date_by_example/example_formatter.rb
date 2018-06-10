@@ -31,7 +31,7 @@ class ExampleFormatter
     "02" => "%d",
     "03" => "%I",
     "PM" => "%P",
-    "pm" => "%m",
+    "pm" => "%p",
     "04" => "%M",
     "05" => "%S",
     "2" => "%-e"}.freeze
