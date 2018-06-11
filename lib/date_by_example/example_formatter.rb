@@ -29,20 +29,17 @@ class ExampleFormatter
     "01" => "%m",
     "02" => "%d",
     "03" => "%I",
-    "PM" => "%P",
-    "pm" => "%p",
+    "PM" => "%p",
+    "pm" => "%P",
     "04" => "%M",
     "05" => "%S",
     "1" => "%-m",
     "2" => "%-e"}.freeze
 
+  FORMAT_MATCHER = Regexp.union(FORMATS.keys)
+
   def format_string
-    @format_string ||= begin
-      FORMATS.each do |example, formatter|
-        reference.gsub!(example, formatter)
-      end
-      reference
-    end
+    @format_string ||= reference.gsub(FORMAT_MATCHER, FORMATS)
   end
 
   def format(date)

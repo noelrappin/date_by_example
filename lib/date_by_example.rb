@@ -18,6 +18,3 @@ module DateByExample
     # GSUB version is 16.15 seconds
   end
 end
-
-
-
