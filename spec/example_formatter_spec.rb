@@ -47,6 +47,7 @@ RSpec.describe ExampleFormatter do
     specify { expect(format_string_for("15")).to eq("%H") }
     # ruby has %k for blank padded 24 hour clock but I can't do that here
     specify { expect(format_string_for("03")).to eq("%I") }
+    specify { expect(format_string_for("3")).to eq("%l") }
     # ruby has "%l" for space padding, but we're not doing that
     specify { expect(format_string_for("PM")).to eq("%p") }
     specify { expect(format_string_for("pm")).to eq("%P") }

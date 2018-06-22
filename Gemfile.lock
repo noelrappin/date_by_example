@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    date_by_example (0.1.0)
+    date_by_example (0.1.1)
 
 GEM
   remote: https://rubygems.org/
@@ -53,4 +53,4 @@ DEPENDENCIES
   rubocop-rspec (~> 1.25)
 
 BUNDLED WITH
-   1.16.1
+   1.16.2

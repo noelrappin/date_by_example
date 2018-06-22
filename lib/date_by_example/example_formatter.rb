@@ -34,7 +34,8 @@ class ExampleFormatter
     "04" => "%M",
     "05" => "%S",
     "1" => "%-m",
-    "2" => "%-e"}.freeze
+    "2" => "%-e",
+    "3" => "%l"}.freeze
 
   FORMAT_MATCHER = Regexp.union(FORMATS.keys)
 
