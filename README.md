@@ -48,7 +48,7 @@ strings
 
 ### Supported formats
 
-* Year: 2000 and 00 (but not Ruby's %c for the century)
+* Year: 2006 and 06 (but not Ruby's %c for the century)
 * Month: January, JANUARY, Jan, JAN, 1, and 01, but not " 1" for space padding
 * Day: 2, 02, 002 (for day of year), Monday, MONDAY, Mon, MON, but not " 2" for space padding
 * Hour: 15, 3, pm, PM
