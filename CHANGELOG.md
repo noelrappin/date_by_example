@@ -5,7 +5,8 @@
 * Adds `by_example_go` and `by_example_word` to choose a style explicitly;
   `by_example` uses word style whenever the format contains `{{`
 * BREAKING: `ExampleFormatter` is now abstract; use `ExampleFormatter.for`,
-  `GoFormatter.new`, or `WordFormatter.new`. `FORMATS` moved to `GoFormatter`
+  `DateByExample::GoFormatter.new`, or `DateByExample::WordFormatter.new`.
+  `FORMATS` moved to `DateByExample::GoFormatter`
 * BREAKING: Go-style `3` is now unpadded (`%-l`) as documented; it was space-padded
 * Fixes Go-style `.000000000` nanoseconds
 * Fixes Go-style zone `-0700` (was the typo `-7000`)

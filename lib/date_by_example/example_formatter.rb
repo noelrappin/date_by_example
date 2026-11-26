@@ -1,6 +1,6 @@
 class ExampleFormatter
   def self.for(reference)
-    (reference.include?("{{") ? WordFormatter : GoFormatter).new(reference)
+    (reference.include?("{{") ? DateByExample::WordFormatter : DateByExample::GoFormatter).new(reference)
   end
 
   attr_reader :reference

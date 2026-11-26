@@ -1,4 +1,4 @@
-RSpec.describe GoFormatter do
+RSpec.describe DateByExample::GoFormatter do
   def format_string_for(str)
     described_class.new(str).format_string
   end

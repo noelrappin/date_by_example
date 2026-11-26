@@ -1,7 +1,7 @@
 RSpec.describe ExampleFormatter do
   describe ".for" do
-    specify { expect(described_class.for("Jan 2, 2006")).to be_a(GoFormatter) }
-    specify { expect(described_class.for("{{Mon}} {{Date}}")).to be_a(WordFormatter) }
+    specify { expect(described_class.for("Jan 2, 2006")).to be_a(DateByExample::GoFormatter) }
+    specify { expect(described_class.for("{{Mon}} {{Date}}")).to be_a(DateByExample::WordFormatter) }
     specify { expect(described_class.for("2006 {{Year}}").format_string).to eq("2006 %Y") }
   end
 

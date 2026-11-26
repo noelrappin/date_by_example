@@ -1,6 +1,4 @@
-lib = File.expand_path("lib", __dir__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "date_by_example/version"
+require_relative "lib/date_by_example/version"
 
 Gem::Specification.new do |spec|
   spec.name = "date_by_example"
@@ -8,22 +6,19 @@ Gem::Specification.new do |spec|
   spec.authors = ["Noel Rappin"]
   spec.email = ["noelrappin@gmail.com"]
 
-  spec.summary = "Go style date formatting by example"
-  spec.description = "Go style date formatting by example"
-  spec.homepage = "http://www.github.com/noelrappin/date_by_example"
+  spec.summary = "Format dates by example, Go-style or with readable {{Token}} templates"
+  spec.description = <<~DESC
+    Adds by_example to Date, Time, and DateTime. Format with Go's reference
+    date ("Jan 2, 2006") or with word tokens ("{{Mon}} {{Date:1}}, {{Year}}")
+    instead of memorizing strftime codes.
+  DESC
+  spec.homepage = "https://github.com/noelrappin/date_by_example"
   spec.license = "MIT"
-
-  spec.files = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
-  end
-  spec.bindir = "exe"
-  spec.executables = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
   spec.required_ruby_version = ">= 3.4"
 
-  spec.add_development_dependency "benchmark"
-  spec.add_development_dependency "bundler"
-  spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec"
-  spec.add_development_dependency "standard", ">= 1.35.1"
+  spec.metadata["changelog_uri"] = "#{spec.homepage}/blob/main/CHANGELOG.md"
+  spec.metadata["rubygems_mfa_required"] = "true"
+
+  spec.files = Dir["lib/**/*.rb", "README.md", "LICENSE.txt", "CHANGELOG.md"]
+  spec.require_paths = ["lib"]
 end
