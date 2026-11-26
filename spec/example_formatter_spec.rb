@@ -1,4 +1,4 @@
-RSpec.describe ExampleFormatter do
+RSpec.describe DateByExample::ExampleFormatter do
   describe ".for" do
     specify { expect(described_class.for("Jan 2, 2006")).to be_a(DateByExample::GoFormatter) }
     specify { expect(described_class.for("{{Mon}} {{Date}}")).to be_a(DateByExample::WordFormatter) }

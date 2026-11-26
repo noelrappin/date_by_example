@@ -1,8 +1,14 @@
 require "date"
-require "date_by_example/version"
-require "date_by_example/example_formatter"
-require "date_by_example/go_formatter"
-require "date_by_example/word_formatter"
-require "date_by_example/by_example"
-require "date_by_example/date"
-require "date_by_example/time"
+require "zeitwerk"
+
+module DateByExample
+end
+
+loader = Zeitwerk::Loader.for_gem
+loader.setup
+
+Date.include(DateByExample::ByExample)
+Time.include(DateByExample::ByExample)
+
+# Top-level name from 0.1, kept for compatibility
+ExampleFormatter = DateByExample::ExampleFormatter

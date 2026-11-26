@@ -1,6 +1,9 @@
 ## Version 0.2.0 11/24/2026
 
 * Requires Ruby 3.4 or later
+* Adds a runtime dependency on zeitwerk for code loading
+* Classes now live under `DateByExample`; the top-level `ExampleFormatter`
+  still works as an alias for `DateByExample::ExampleFormatter`
 * Adds word-style formatting with `{{Token}}` syntax, e.g. `{{Mon}} {{Date:1}}, {{Year}}`
 * Adds `by_example_go` and `by_example_word` to choose a style explicitly;
   `by_example` uses word style whenever the format contains `{{`
